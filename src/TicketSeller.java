@@ -1,4 +1,7 @@
-package PACKAGE_NAME;
-
 public class TicketSeller {
+    private TicketOffice ticketOffice;
+
+    public TicketSeller(TicketOffice ticketOffice) {
+        this.ticketOffice = ticketOffice;
+    }
 }
