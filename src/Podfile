@@ -1,0 +1,174 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://oss.navercorp.com/CocoaPods/Specs.git'
+source 'https://git.linecorp.com/LINE-Client/cocoapods-specs.git'
+
+platform :ios, '10.0'
+use_frameworks!
+inhibit_all_warnings!
+
+
+
+
+
+
+# 공통 라이브러리
+def common_pods
+  pod 'ReachabilitySwift'
+  pod 'SwiftyUserDefaults', '~> 3.0'
+  pod 'Kingfisher', '~> 4.0'
+  pod 'TTTAttributedLabel'
+  pod 'XLPagerTabStrip', :git => 'https://github.com/grayjang/XLPagerTabStrip', :branch => 'master'
+  pod 'TransitionableTab', '~> 0.2.0'
+  pod 'Sheet', :git => 'https://github.com/ParkGwangBeom/Sheet', :branch => 'temp1'
+  pod 'SWXMLHash', '~> 4.9.0'
+  pod 'Then'
+  pod 'RealmSwift'
+  pod 'RxRealm', '~> 0.7.5'
+  pod 'KeychainAccess', '~> 3.1'
+  pod 'SwipeCellKit', '~> 2.5.0'
+  pod 'SwiftyStoreKit'
+  pod 'SwiftDate', '~> 4.5.1'
+  pod 'DeviceKit', '~> 1.3'
+  pod 'SwiftGen', '~> 6.0'
+  pod 'lottie-ios'
+  
+  #Rx Swift
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxDataSources', '~> 3.0'
+  pod 'RxOptional'
+  pod 'RxGesture', '~> 2.2.0'
+
+  #사내 라이브러리
+  pod 'NNetworkLayer', '~> 1.0.4'
+  pod 'Nelo2SDK', '~> 0.34.0'
+  pod 'AudioPlayerMusic', '1.2.2'
+  pod 'SoundSearcher', '~> 0.0.7'
+  pod 'AudioEditor', :git => 'https://oss.navercorp.com/AudioPlatform/audio-editor-ios', :branch => 'develop'
+
+  #애널리틱스
+  pod 'Firebase/Core'
+
+  #AppsFlyer
+  pod 'AppsFlyerFramework'
+end
+
+
+def naverlogin_pods
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa'
+  pod 'DeviceKit', '~> 1.3'
+
+  pod 'NaverLogin', '~> 6.1.15'
+end
+
+def linelogin_pods
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa'
+  pod 'DeviceKit', '~> 1.3'
+
+  pod 'LineSDKSwift', '~> 5.1.2'
+
+  pod 'FBSDKCoreKit', '~> 4.36.0'
+  pod 'FBSDKLoginKit', '~> 4.36.0'
+  pod 'FBSDKShareKit', '~> 4.36.0'
+end
+
+
+def notice_naver
+  pod 'NaverNotice', :git => 'https://oss.navercorp.com/appnotice/notice-ios', :branch => 'master'
+end
+
+def notice_Lan
+  pod 'LCNotice', :git => 'https://git.linecorp.com/LAN-sdk/ios_lan_sdk', :branch => 'master'
+end
+
+# VIBE-KR
+target 'VibeMusic' do
+  common_pods
+  naverlogin_pods
+  notice_naver
+
+  target 'VibeMusicTests' do
+    inherit! :search_paths
+  end
+end
+
+# LINEMUSIC-TW
+target 'LineMusic-TW-RC' do
+  common_pods
+  linelogin_pods
+  notice_Lan
+end
+
+target 'LineMusic-TW-Dev' do
+  common_pods
+  linelogin_pods
+  notice_Lan
+end
+
+target 'LineMusic-TW-Real' do
+  common_pods
+  linelogin_pods
+  notice_Lan
+end
+
+target 'LineMusic-TW-Beta' do
+  common_pods
+  linelogin_pods
+  notice_Lan
+end
+
+# LINEMUSIC-JP
+target 'LineMusic-JP' do
+  common_pods
+  linelogin_pods
+  notice_Lan
+end
+
+
+# Naver Login
+target 'Login-Naver' do
+	
+  naverlogin_pods
+end
+
+# Line Login
+target 'Login-Line' do
+	
+  linelogin_pods
+end
+
+
+# Never Notice
+target 'Notice-Naver' do
+  notice_naver
+end
+
+# Line Notice
+target 'Notice-Line' do
+  notice_Lan
+end
+
+
+
+
+
+
+pre_install do |installer|
+    Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+    eval(Net::HTTP.get_response(URI.parse("http://swift-beta-switcher-line-sdk-nucleo.linecorp-dev.com/configs/5.0/scripts/to_beta.rb")).body)
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+
+
+        if target.name == 'RxSwift'
+            target.build_configurations.each do |config|
+                if config.name == 'Development'
+                    config.build_settings['OTHER_SWIFT_FLAGS'] ||= ['-D', 'TRACE_RESOURCES']
+                end
+            end
+        end
+    end
+end
