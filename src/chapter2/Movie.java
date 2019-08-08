@@ -19,6 +19,10 @@ public class Movie {
         return fee;
     }
 
+    public void changeDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountpolicy = discountPolicy;
+    }
+
     public Money calculateMovieFee(Screening screening) {
         if (discountpolicy == null) {
             return fee;
