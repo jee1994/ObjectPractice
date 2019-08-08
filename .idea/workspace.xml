@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0730bdd-accb-4c69-9bc6-629fecdecb2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/chapter2/AmountDiscountPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chapter2/DiscountCondition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chapter2/DiscountPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chapter2/PercentDiscountPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chapter2/PeriodCondition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chapter2/SequenceCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter2/DefaultDiscountPolicy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chapter2/NoneDiscountPolicy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chapter2/DiscountPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapter2/DiscountPolicy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chapter2/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chapter2/Movie.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,15 +21,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chapter2/Money.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chapter2/Reservation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -44,13 +32,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chapter2/Movie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="390">
+              <caret line="26" column="76" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
               <folding>
                 <element signature="e#474#475#0" expanded="true" />
                 <element signature="e#500#501#0" expanded="true" />
-                <element signature="e#563#564#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/chapter2/NoneDiscountPolicy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#149#150#0" expanded="true" />
+                <element signature="e#181#182#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,13 +58,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chapter2/DiscountPolicy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
+            <state relative-caret-position="135">
+              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#245#246#0" expanded="true" />
-                <element signature="e#293#294#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chapter2/DefaultDiscountPolicy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -119,7 +125,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chapter2/PercentDiscountPolicy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -128,15 +134,6 @@
                 <element signature="e#347#348#0" expanded="true" />
                 <element signature="e#368#369#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chapter1/Bag.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -168,13 +165,15 @@
         <option value="$PROJECT_DIR$/src/chapter2/Screening.java" />
         <option value="$PROJECT_DIR$/src/chapter2/Money.java" />
         <option value="$PROJECT_DIR$/src/chapter2/Reservation.java" />
-        <option value="$PROJECT_DIR$/src/chapter2/Movie.java" />
-        <option value="$PROJECT_DIR$/src/chapter2/DiscountPolicy.java" />
         <option value="$PROJECT_DIR$/src/chapter2/DiscountCondition.java" />
         <option value="$PROJECT_DIR$/src/chapter2/SequenceCondition.java" />
         <option value="$PROJECT_DIR$/src/chapter2/PeriodCondition.java" />
         <option value="$PROJECT_DIR$/src/chapter2/AmountDiscountPolicy.java" />
         <option value="$PROJECT_DIR$/src/chapter2/PercentDiscountPolicy.java" />
+        <option value="$PROJECT_DIR$/src/chapter2/Movie.java" />
+        <option value="$PROJECT_DIR$/src/chapter2/DiscountPolicy.java" />
+        <option value="$PROJECT_DIR$/src/chapter2/DefaultDiscountPolicy.java" />
+        <option value="$PROJECT_DIR$/src/chapter2/NoneDiscountPolicy.java" />
       </list>
     </option>
   </component>
@@ -354,31 +353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chapter2/Movie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding>
-            <element signature="e#474#475#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chapter2/DiscountPolicy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/chapter2/DiscountCondition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -427,6 +401,45 @@
           <folding>
             <element signature="e#347#348#0" expanded="true" />
             <element signature="e#368#369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chapter2/Movie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="76" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
+          <folding>
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chapter2/DiscountPolicy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chapter2/DefaultDiscountPolicy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chapter2/NoneDiscountPolicy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#149#150#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
           </folding>
         </state>
       </provider>
